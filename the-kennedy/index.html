@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>body{margin:0}</style></head><body>
+<title>The Kennedy AI Audit</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Vektor audit, white edition: one reading column, document-like, findings first. Single light look by choice. */
+:root{--bg:#FFFFFF;--panel:#F6F4EF;--fg:#0A0A0A;--fg-2:#33312D;--muted:#6E6A63;--line:#E4E1D9;--accent:#8C7238;--ok:#5E6A74;
+--sans:"Instrument Sans","Helvetica Neue",Arial,sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,monospace;color-scheme:light}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+p,h1,h2,h3,ul{margin:0}ul{padding:0;list-style:none}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.lbl{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.top .wrap{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding-block:18px 14px;border-bottom:1.5px solid var(--fg)}
+.mark b{font-weight:600;font-size:14px;letter-spacing:.34em}.mark small{font-family:var(--mono);font-size:10px;letter-spacing:.26em;color:var(--muted);margin-left:8px}
+.hero{padding-block:32px 24px;display:grid;gap:10px}
+h1{font-size:clamp(32px,7vw,44px);font-weight:600;letter-spacing:-.03em;line-height:1.05;text-wrap:balance}
+.sub{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.03em}
+.verdict{margin-top:10px;font-size:clamp(17px,3.2vw,19px);line-height:1.5;border-left:2px solid var(--accent);padding-left:14px;max-width:62ch}
+.score{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-block:1px solid var(--line)}
+.score div{padding:18px 14px 18px 0;display:grid;gap:6px;align-content:start;min-width:0}.score div+div{padding-left:16px;border-left:1px solid var(--line)}
+.score b{font-weight:500;font-size:clamp(30px,8vw,42px);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}.score .hot b{color:var(--accent)}
+.score span{font-size:13px;color:var(--muted);line-height:1.35}
+.sec{padding-top:34px;display:grid;gap:4px}.sec>.lbl{margin-bottom:8px}
+.row{display:grid;grid-template-columns:30px minmax(0,1fr);gap:4px 12px;padding:16px 0;border-top:1px solid var(--line)}
+.row .n{font-family:var(--mono);font-size:12px;color:var(--accent);padding-top:3px}
+.row h3{font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.35}
+.row p{grid-column:2;color:var(--fg-2);font-size:15.5px;max-width:64ch}
+.src{grid-column:2;font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:2px}
+.wk{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}
+.wk li{padding:11px 0 11px 18px;border-top:1px solid var(--line);color:var(--fg-2);font-size:15px;position:relative}
+.wk li:before{content:"";position:absolute;left:0;top:19px;width:7px;height:7px;border-radius:50%;background:var(--ok)}
+.next{margin-top:40px;background:var(--panel);border-top:1.5px solid var(--fg)}
+.next .wrap{padding-block:28px 32px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:flex-end}
+.next h2{font-size:22px;font-weight:600;letter-spacing:-.02em;margin-top:8px}
+.next p{color:var(--fg-2);max-width:44ch;margin-top:6px}
+.c{display:grid;gap:4px;justify-items:start}.c b{font-weight:600}
+.c .m{font-family:var(--mono);font-size:14px;color:var(--fg-2);user-select:all}
+.copy{margin-top:8px;background:var(--fg);color:var(--bg);border:0;font:500 14px var(--sans);padding:11px 16px;cursor:pointer}
+.copy:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.method{font-size:13px;color:var(--muted);line-height:1.55;max-width:70ch}
+footer .wrap{padding-block:18px 36px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line)}
+@media (max-width:560px){.wk{grid-template-columns:1fr}.score span{font-size:12px}.score div+div{padding-left:10px}.score div{padding-right:8px}.row{grid-template-columns:24px minmax(0,1fr)}}
+</style>
+<header class="top"><div class="wrap"><span class="mark"><b>VEKTOR</b><small>ADVISORS</small></span><span class="lbl">AI Visibility Audit</span></div></header>
+<main>
+<section class="wrap hero"><span class="lbl">Prepared for</span><h1>The Kennedy</h1>
+<span class="sub">Piano bar &amp; restaurant · 3210 W Dallas St, Houston · October 20, 2026</span><p class="verdict">The press proof is there. But AI tools can&#x27;t get a straight answer on when you&#x27;re open, and they can&#x27;t see the story that makes you worth the trip.</p></section>
+<div class="wrap"><div class="score"><div class="hot"><b>4</b><span>different weekly schedules for your hours across the web</span></div><div class=""><b>6</b><span>Houston outlets that have covered The Kennedy</span></div><div class="hot"><b>0</b><span>of those articles linked from your homepage</span></div></div></div>
+<section class="wrap sec"><span class="lbl">Findings</span><div class="row"><span class="n">01</span><h3>Four sources, four schedules.</h3><p>Your website says Tue–Wed 4pm–12am, Thu–Fri 2pm–2am, Sat 10am–2am, Sun 10am–6pm. OpenTable lists Tue–Thu opening at 2pm. AAA&#x27;s listing shows weekday lunch from 11am and dinner ending at 9:45pm. Visit Houston still carries your opening-month hours. AI blends them, so guests get told you&#x27;re closed when you&#x27;re open.</p><span class="src">Source · thekennedyhouston.com, OpenTable, AAA Trip Canvas, VisitHoustonTexas.com</span></div><div class="row"><span class="n">02</span><h3>An AI-built travel guide calls you a pick for when the chef and cuisine don&#x27;t matter.</h3><p>Pearl, an AI-generated travel guide, describes The Kennedy as a venue with little documented about its chef, cuisine or awards, and says its verified details are mostly hours and dress code. Meanwhile OutSmart profiled Chef Adriana Maldonado&#x27;s three-decade career and her French-meets-Spanish-and-Mexican cooking. The proof exists. The machines just can&#x27;t find it.</p><span class="src">Source · joinpearl.co, OutSmart Magazine</span></div><div class="row"><span class="n">03</span><h3>Your best story isn&#x27;t on your homepage.</h3><p>Owner Andres Castro and Ninety3 Hospitality, the East Coast supper-club concept, the piano-centered design, the Prime Meat Markets partnership: all of it lives in press articles, not on your site. AI can only repeat what it can read.</p><span class="src">Source · thekennedyhouston.com homepage; Community Impact, Houston CityBook, OutSmart</span></div><div class="row"><span class="n">04</span><h3>Your site looks inactive to a machine.</h3><p>The most recent posts in the homepage feed are holiday and New Year&#x27;s Eve 2025 promotions. AI tools weigh freshness. Ten-month-old content signals a venue that may have changed or closed.</p><span class="src">Source · thekennedyhouston.com homepage</span></div><div class="row"><span class="n">05</span><h3>The review themes AI will repeat.</h3><p>OpenTable&#x27;s own summaries praise the ambiance, cocktails and live music. Reviews also flag a cold room, a limited brunch menu and slow service. AI repeats both sides, and none of the complaints have a reply.</p><span class="src">Source · OpenTable listing and review summaries</span></div></section>
+<section class="wrap sec"><span class="lbl">Already working</span><ul class="wk"><li>Hours, address and phone are published in text on your own site, not buried in an image.</li><li>Signature dishes (Wagyu smash burger, Wagyu tartare, caviar service) are described in plain text on the homepage.</li><li>Your dress code and 21+ policy are detailed enough that AI guides already quote them.</li><li>OpenTable shows steady booking demand and 250+ reviews.</li></ul></section>
+<section class="next"><div class="wrap">
+<div><span class="lbl">Next step</span><h2>15 minutes. The full picture.</h2><p>A walkthrough of what AI gets wrong about The Kennedy and what we'd fix first.</p></div>
+<div class="c"><b>Ntsumi Cossa · Vektor Advisors</b><span class="m" id="ph">832-335-7018</span><span class="m">ntsumicossa@gmail.com</span><button class="copy" type="button" id="cp">Copy phone number</button></div>
+</div></section>
+<section class="wrap sec"><p class="method">Method · This audit covers public web search results, the business&#x27;s own website, third-party listings and directories, and published press. It reflects what was publicly visible on October 20, 2026. A follow-up round tests how ChatGPT and other AI assistants answer questions about the business.</p></section>
+</main>
+<footer><div class="wrap" style="margin-top:28px"><span class="lbl">Vektor Advisors · A Melius Capital portfolio company</span><span class="lbl">October 2026</span></div></footer>
+<script>
+document.getElementById("cp").addEventListener("click",async e=>{const b=e.currentTarget;try{await navigator.clipboard.writeText("832-335-7018");b.textContent="Copied"}catch{const r=document.createRange();r.selectNodeContents(document.getElementById("ph"));const s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent="Selected, press copy"}});
+</script></body></html>
